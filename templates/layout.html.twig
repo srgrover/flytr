@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% set ruta = app.request.get('_route') %}
+
+    <div class="container position-fixed fixed-top">
+        {% if app.session.flashBag.has('success') %}
+            {% for mensaje in app.session.flashBag.get('success') %}
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+                    {{ mensaje }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        {% if app.session.flashBag.has('error') %}
+            {% for mensaje in app.session.flashBag.get('error') %}
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+                    {{ mensaje }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <div class="wrap d-flex justify-content-between">
+        <header class="w-50">
+            {% block nav %}
+                <nav class="nav flex-column float-right w-50">
+                    <a href="#" class="navbar-brand">FLYTR</a>
+                    <a class="nav-link active" href="#">Inicio</a>
+                    <a class="nav-link" href="#">Notificaciones</a>
+                    <a class="nav-link" href="#">Mensajes</a>
+                    <a class="nav-link" href="#">Perfil</a>
+                </nav>
+            {% endblock %}
+        </header>
+
+        <div class="content d-flex justify-content-between w-100">
+            <section class="w-100">
+                {% block section %}
+                {% endblock %}
+            </section>
+
+            <aside class="w-100">
+                {% block aside %}
+                    hola soy aside
+                {% endblock %}
+            </aside>
+        </div>
+    </div>
+{% endblock %}

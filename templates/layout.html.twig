@@ -31,7 +31,8 @@
                     <a class="nav-link active" href="#">Inicio</a>
                     <a class="nav-link" href="#">Notificaciones</a>
                     <a class="nav-link" href="#">Mensajes</a>
-                    <a class="nav-link" href="#">Perfil</a>
+                    <a class="nav-link" href="{{ path('profile', {'id' : app.user.id}) }}">Perfil</a>
+                    <a class="nav-link" href="{{ path('app_logout') }}">Salir</a>
                 </nav>
             {% endblock %}
         </header>

@@ -24,21 +24,21 @@
     </div>
 
     <div class="wrap d-flex justify-content-between">
-        <header class="w-50">
+        <header class="w-50 d-flex justify-content-end">
             {% block nav %}
-                <nav class="nav flex-column float-right w-50">
+                <nav class="nav flex-column w-50">
                     <a href="#" class="navbar-brand">FLYTR</a>
                     <a class="nav-link active" href="#">Inicio</a>
                     <a class="nav-link" href="#">Notificaciones</a>
                     <a class="nav-link" href="#">Mensajes</a>
-                    <a class="nav-link" href="{{ path('profile', {'id' : app.user.id}) }}">Perfil</a>
+                    <a class="nav-link mt-auto" href="{{ path('profile', {'id' : app.user.id}) }}">Perfil</a>
                     <a class="nav-link" href="{{ path('app_logout') }}">Salir</a>
                 </nav>
             {% endblock %}
         </header>
 
         <div class="content d-flex justify-content-between w-100">
-            <section class="w-100">
+            <section class="w-100 border-right border-left">
                 {% block section %}
                 {% endblock %}
             </section>

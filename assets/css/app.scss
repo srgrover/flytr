@@ -1,6 +1,79 @@
 @import "~bootstrap/scss/bootstrap";
+@import "./_colors";
+//@use 'colors' as Colors;
 
-body {
-  background: white;
+// Mixin
+@mixin interactue-button-publication($color) {
+  padding: 0.5rem;
+  display: flex;
+  background-color: transparent;
+  align-items: center;
+  transition: all;
+  transition-duration: 0.2s;
+  &:hover {
+    background-color: transparentize($color, 0.9) !important;
+    svg {
+      fill: $color;
+    }
+    .pelele{
+      color: blue;
+    }
+  }
 }
+
+
+
+
+//Styles
+body {
+  background: #FFFFFF;
+}
+
+.content-input-feed{
+  margin-top: 0.7rem !important;
+
+  .input-feed-new {
+    margin: 0 .5rem;
+    margin-bottom: 2rem;
+    width: 95%;
+    border: 0;
+    :active{
+      border: 0;
+    }
+  }
+}
+
+//Botones sociales de publicación
+.disqus-button-publication{
+  @include interactue-button-publication($primary);
+}
+
+.disqus-stat{
+  &:hover{
+    .disqus-button-publication{
+      @include interactue-button-publication($primary);
+    }
+    span{
+      color: $app-primary;
+    }
+  }
+}
+
+// Utilities General
+.bg-app-primary{
+  background-color: $primary !important;
+}
+
+.text-app-primary{
+  color: $primary !important;
+}
+
+.rounded-50{
+  border-radius: 50px;
+}
+
+.font-size-14{
+  font-size: 14px;
+}
+
 

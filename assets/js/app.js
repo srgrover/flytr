@@ -7,6 +7,7 @@
 
 // any CSS you import will output into a single css file (app.scss in this case)
 import '../css/app.scss';
+//import '../css/_colors.scss';
 import $ from 'jquery';
 
 //const $ = require('jquery');

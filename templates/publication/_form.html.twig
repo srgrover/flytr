@@ -1,0 +1,10 @@
+{{ form_start(form) }}
+    {{ form_errors(form) }}
+    <div class="content-input-feed">
+        {{ form_row(form.text) }}
+    </div>
+
+    <div class="d-flex justify-content-end border-top px-3">
+        <button class="btn btn-primary bg-app-primary mt-3 text-white rounded-50 font-weight-bold px-4">{{ button_label|default('Save') }}</button>
+    </div>
+{{ form_end(form) }}

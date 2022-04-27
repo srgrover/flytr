@@ -1,0 +1,21 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Feed{% endblock %}
+
+{% block section %}
+    <h5 class="px-3 mt-3 mb-4">Feed</h5>
+
+    <div class="d-flex justify-content-start mb-3 pl-3">
+        <div class="rounded-circle">
+            <img class="rounded-circle" src="https://pbs.twimg.com/profile_images/1481188166908452866/9DLfO4Ab_normal.jpg" height="50" alt="">
+        </div>
+        <div class="w-100">
+            {{ include('publication/new.html.twig', {'button_label': 'Fleet'}) }}
+        </div>
+    </div>
+
+    <div class="border-top">
+        {{ include('publication/index.html.twig') }}
+    </div>
+
+{% endblock %}

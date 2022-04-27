@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PizzaController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hola Pizza Lovers!</h1>
+
+    <div class="card-deck">
+        <div class="card">
+            <img class="card-img-top" height="200" src="https://www.pizzeriacoliseo.com/wp-content/uploads/prosciutto-e-funghi.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title text-bold">Pizza Prosciutto</h5>
+                <p class="card-text text-muted">
+                    {{ 'Pizza Prosciutto e Funghi base hecha con una
+                    mezcla de harina biologica, harina integral, germe,
+                    levadura madre, sal, aceite y agua, condimentada
+                    con tomate natural, mozzarella fior di latte, jamon
+                    york y champiñones salteados.'|resume }}
+                </p>
+            </div>
+            <div class="card-footer text-right">
+                <h4 class="text-muted">{{ 12.50|price(2, ',', '.') }}</h4>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" height="200" src="https://i.pinimg.com/originals/08/ef/38/08ef3823361683c683d1c7eb3a139640.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title text-bold">Pizza Napolitana</h5>
+                <p class="card-text text-muted">
+                    {{ 'La pizza Napolitana es un tipo de pizza que se originó
+                    en la ciudad de Nápoles, Italia. Este tipo de pizza se suele
+                    preparar con ingredientes simples y frescos. Una masa básica,
+                    salsa de tomate natural, queso mozzarella, albahaca fresca y
+                    aceite de oliva.'|resume }}
+                </p>
+            </div>
+            <div class="card-footer text-right">
+                <h4 class="text-muted">{{ 13|price(2, ',', '.') }}</h4>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" height="200" src="https://image.freepik.com/foto-gratis/pizza-cuatro-quesos-tabla-madera_112304-170.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title text-bold">Pizza cuatro quesos</h5>
+                <p class="card-text text-muted">
+                    {{ 'La auténtica cuatro quesos incluye variedades de distintas regiones italianas en representación de los quesos que se elaboran en este país de norte a sur, aunque si lo prefieres puedes sustituirlos por otros, que para gustos, colores.
+                    A diferencia del resto de pizzas, en este caso no se cubre la masa con tomate.' | resume }}
+                </p>
+            </div>
+            <div class="card-footer text-right">
+                <h4 class="text-muted">{{ 10.70|price(1, ',', '.') }}</h4>
+            </div>
+        </div>
+        {% for var in globals() %}
+            {{ var }}
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

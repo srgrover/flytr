@@ -39,3 +39,4 @@ security:
         - { path: ^/user_index, roles: ROLE_ADMIN }
         # - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/feed, roles: ROLE_USER }
